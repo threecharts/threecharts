@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "libraries": [
+    "default",
+    "atlas",
+    "cmocean",
+    "colorcet",
+    "crameri",
+    "matplotlib"
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "nxr-colormaps atlas manifest",
+  "description": "Sidecar JSON for one PNG atlas. One of these files lives next to each colormaps.png under dist/<library>/.",
+  "type": "object",
+  "required": [
+    "version",
+    "library",
+    "width",
+    "rows",
+    "colormaps"
+  ],
+  "properties": {
+    "version": {
+      "type": "integer",
+      "const": 2,
+      "description": "Schema version."
+    },
+    "library": {
+      "type": "string",
+      "description": "Library label — 'default' for the curated cross-source palette, otherwise the basename of the corresponding libraries/<name>.toml."
+    },
+    "width": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "PNG width in pixels (LUT length)."
+    },
+    "rows": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of colormaps in this atlas (= PNG height)."
+    },
+    "colormaps": {
+      "type": "array",
+      "description": "Per-row metadata, in PNG row order.",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "source",
+          "source_id",
+          "type",
+          "perceptually_uniform",
+          "description",
+          "citation",
+          "index",
+          "license",
+          "preview"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Public colormap name; unique within this atlas."
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "matplotlib",
+              "cmocean",
+              "crameri",
+              "colorcet",
+              "raw"
+            ],
+            "description": "Source adapter kind that produced the row."
+          },
+          "source_id": {
+            "type": "string",
+            "description": "Identifier within the source: registry key for matplotlib/colorcet, attribute name for cmocean/crameri, relative CSV path for raw."
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "sequential",
+              "diverging",
+              "cyclic",
+              "categorical"
+            ],
+            "description": "Colormap category."
+          },
+          "perceptually_uniform": {
+            "type": "boolean",
+            "description": "True if luminance is monotonic / balanced."
+          },
+          "description": {
+            "type": "string",
+            "description": "Free-form usage hint (may surface in picker UIs)."
+          },
+          "citation": {
+            "type": "string",
+            "description": "Author / paper attribution for this specific colormap. Empty when not specified. The library-wide license is in the `license` field instead."
+          },
+          "index": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Row index in this PNG (0-based, local to the file)."
+          },
+          "license": {
+            "type": "string",
+            "description": "Library-wide license attribution. Identical for every entry from the same source kind."
+          },
+          "preview": {
+            "type": "string",
+            "description": "CSS `linear-gradient(90deg, …)` with 12 evenly-spaced rgb() stops sampled from this colormap's atlas row — the swatch a picker renders without decoding the PNG. Emitted by the baker itself (no separate post-process step)."
+          }
+        }
+      }
+    }
+  }
+}

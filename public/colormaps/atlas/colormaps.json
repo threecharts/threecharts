@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "library": "atlas",
+  "width": 256,
+  "rows": 6,
+  "colormaps": [
+    {
+      "name": "desikan-killiany",
+      "source": "raw",
+      "source_id": "data/atlas/dk.csv",
+      "type": "categorical",
+      "perceptually_uniform": false,
+      "description": "Desikan-Killiany cortical parcellation (aparc).",
+      "citation": "Desikan et al. (2006), NeuroImage 31(3):968-980",
+      "usage": "atlas",
+      "index": 0,
+      "license": "raw — license tied to the source CSV; record per-entry",
+      "preview": "linear-gradient(90deg, rgb(153,153,153) 0%, rgb(100,25,0) 9%, rgb(100,0,100) 18%, rgb(180,40,120) 27%, rgb(35,75,50) 36%, rgb(160,100,50) 45%, rgb(220,180,140) 55%, rgb(120,100,60) 64%, rgb(60,20,220) 73%, rgb(75,50,125) 82%, rgb(140,220,220) 91%, rgb(150,150,200) 100%)"
+    },
+    {
+      "name": "dkt",
+      "source": "raw",
+      "source_id": "data/atlas/dkt.csv",
+      "type": "categorical",
+      "perceptually_uniform": false,
+      "description": "Desikan-Killiany-Tourville (DKT40) parcellation.",
+      "citation": "Klein & Tourville (2012), Front. Neurosci. 6:171",
+      "usage": "atlas",
+      "index": 1,
+      "license": "raw — license tied to the source CSV; record per-entry",
+      "preview": "linear-gradient(90deg, rgb(153,153,153) 0%, rgb(220,20,100) 9%, rgb(220,60,220) 18%, rgb(140,20,140) 27%, rgb(35,75,50) 36%, rgb(160,100,50) 45%, rgb(220,180,140) 55%, rgb(120,100,60) 64%, rgb(60,20,220) 73%, rgb(75,50,125) 82%, rgb(140,220,220) 91%, rgb(150,150,200) 100%)"
+    },
+    {
+      "name": "destrieux",
+      "source": "raw",
+      "source_id": "data/atlas/destrieux.csv",
+      "type": "categorical",
+      "perceptually_uniform": false,
+      "description": "Destrieux sulco-gyral parcellation (a2009s), 148 regions.",
+      "citation": "Destrieux et al. (2010), NeuroImage 53(1):1-15",
+      "usage": "atlas",
+      "index": 2,
+      "license": "raw — license tied to the source CSV; record per-entry",
+      "preview": "linear-gradient(90deg, rgb(153,153,153) 0%, rgb(63,100,60) 9%, rgb(220,20,100) 18%, rgb(220,180,140) 27%, rgb(220,180,220) 36%, rgb(220,60,220) 45%, rgb(61,20,60) 55%, rgb(221,60,140) 64%, rgb(61,220,100) 73%, rgb(61,20,180) 82%, rgb(21,20,240) 91%, rgb(221,60,60) 100%)"
+    },
+    {
+      "name": "brodmann",
+      "source": "raw",
+      "source_id": "data/atlas/brodmann.csv",
+      "type": "categorical",
+      "perceptually_uniform": false,
+      "description": "Brodmann cytoarchitectonic areas, as shipped by Brainstorm.",
+      "citation": "Brodmann (1909); FreeSurfer BA labels",
+      "usage": "atlas",
+      "index": 3,
+      "license": "raw — license tied to the source CSV; record per-entry",
+      "preview": "linear-gradient(90deg, rgb(153,153,153) 0%, rgb(0,92,23) 9%, rgb(131,148,255) 18%, rgb(255,102,51) 27%, rgb(153,0,38) 36%, rgb(115,153,0) 45%, rgb(196,255,20) 55%, rgb(1,38,153) 64%, rgb(155,0,153) 73%, rgb(153,15,0) 82%, rgb(0,214,129) 91%, rgb(33,150,250) 100%)"
+    },
+    {
+      "name": "brodmann-thresh",
+      "source": "raw",
+      "source_id": "data/atlas/brodmann-thresh.csv",
+      "type": "categorical",
+      "perceptually_uniform": false,
+      "description": "Brodmann areas, thresholded variant.",
+      "citation": "Brodmann (1909); FreeSurfer BA_exvivo.thresh labels",
+      "usage": "atlas",
+      "index": 4,
+      "license": "raw — license tied to the source CSV; record per-entry",
+      "preview": "linear-gradient(90deg, rgb(153,153,153) 0%, rgb(0,92,23) 9%, rgb(131,148,255) 18%, rgb(0,0,255) 27%, rgb(153,0,38) 36%, rgb(115,153,0) 45%, rgb(196,255,20) 55%, rgb(255,51,204) 64%, rgb(1,38,153) 73%, rgb(155,0,153) 82%, rgb(153,15,0) 91%, rgb(0,214,129) 100%)"
+    },
+    {
+      "name": "structures",
+      "source": "raw",
+      "source_id": "data/atlas/structures.csv",
+      "type": "categorical",
+      "perceptually_uniform": false,
+      "description": "Coarse structural split (the two hemispheres).",
+      "citation": "Brainstorm anatomy",
+      "usage": "atlas",
+      "index": 5,
+      "license": "raw — license tied to the source CSV; record per-entry",
+      "preview": "linear-gradient(90deg, rgb(153,153,153) 0%, rgb(153,153,153) 9%, rgb(153,153,153) 18%, rgb(153,153,153) 27%, rgb(190,190,190) 36%, rgb(190,190,190) 45%, rgb(190,190,190) 55%, rgb(190,190,190) 64%, rgb(190,190,190) 73%, rgb(190,190,190) 82%, rgb(190,190,190) 91%, rgb(190,190,190) 100%)"
+    }
+  ]
+}

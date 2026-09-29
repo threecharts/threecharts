@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "types": ["node", "vitest/globals"],
+    "paths": {
+      "threecharts": ["./src/index.ts"],
+      "threecharts/testing": ["./src/testing/index.ts"]
+    }
+  },
+  "include": ["src", "contrib", "examples", "vitest.config.ts", "tsup.config.ts", "vite.config.ts"]
+}

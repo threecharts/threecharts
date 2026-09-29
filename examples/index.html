@@ -1,0 +1,50 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>threecharts examples</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; background: #0b0d10; color: #d8dee9; font: 14px/1.5 ui-sans-serif, system-ui, sans-serif; }
+  header { padding: 24px 28px 8px; }
+  h1 { margin: 0 0 4px; font-size: 17px; font-weight: 600; letter-spacing: -0.01em; }
+  p  { margin: 0; color: #7d8590; max-width: 62ch; }
+  main { display: grid; gap: 20px; padding: 20px 28px 40px;
+         grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
+  /* Column flex with a growing caption: the grid stretches every figure to the
+     tallest row, and without this a shorter caption leaves the figure's own black
+     background showing beneath it. */
+  figure { margin: 0; border: 1px solid #1c2128; border-radius: 8px; overflow: hidden;
+           background: #000; display: flex; flex-direction: column; }
+  figcaption { flex: 1; padding: 10px 14px; border-top: 1px solid #1c2128; background: #0d1117; }
+  figcaption b { display: block; color: #d8dee9; font-weight: 600; }
+  figcaption span { color: #7d8590; }
+  .plot { width: 100%; aspect-ratio: 4 / 3; }
+  /* The canvas is inline by default, so its baseline leaves a strip of page
+     showing below it inside the figure. */
+  canvas { display: block; }
+  #err { padding: 16px 28px; color: #ff7b72; white-space: pre-wrap; font-family: ui-monospace, monospace; }
+</style>
+<header>
+  <h1>threecharts</h1>
+  <p>Every panel below shares one WebGPU device, one clock and one animation loop.
+     Requires a browser with WebGPU.</p>
+</header>
+<div id="err"></div>
+<main>
+  <figure><div class="plot" id="heatmap"></div>
+    <figcaption><b>Image on a grid domain</b><span>A scalar field on a rectilinear lattice. The lattice computes its positions — it allocates nothing.</span></figcaption></figure>
+  <figure><div class="plot" id="surface"></div>
+    <figcaption><b>Surface on a mesh domain</b><span>A scalar on a torus. The mesh is the coordinate system.</span></figcaption></figure>
+  <figure><div class="plot" id="polar"></div>
+    <figcaption><b>Quiver on a <i>contributed</i> polar domain</b><span>Polar is defined in <code>contrib/</code>, outside the library. Quiver predates it and needed no change.</span></figcaption></figure>
+  <figure><div class="plot" id="ridgeline"></div>
+    <figcaption><b>Stacked traces</b><span>28 channels of a travelling burst. <code>channelSpacing</code> stacks them; the same uniform set to 0 overlays them.</span></figcaption></figure>
+  <figure><div class="plot" id="bars"></div>
+    <figcaption><b>Time-varying bars</b><span>24 channels, 240 frames, <code>[rows &times; time]</code>. One upload; each frame is a single uniform write.</span></figcaption></figure>
+  <figure><div class="plot" id="bands" style="aspect-ratio: 2 / 1"></div>
+    <figcaption><b>Bands</b><span>A filled spectrum, and the <i>same primitive</i> on a polar domain — a rose. One drawable, two charts.</span></figcaption></figure>
+  <figure><div class="plot" id="boxplot"></div>
+    <figcaption><b>Box plot — composed in <code>contrib/</code></b><span>Four <code>Glyphs</code> layers on one lattice, written against the public API alone. The third extension axis.</span></figcaption></figure>
+  <figure><div class="plot" id="polarraster"></div>
+    <figcaption><b>Raster on a polar domain</b><span>The same <code>Image</code> as the first panel. Its vertices are placed by the domain, so a curved one gives a radial heatmap.</span></figcaption></figure>
+</main>
+<script type="module" src="./main.ts"></script>
